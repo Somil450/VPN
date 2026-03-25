@@ -1,0 +1,243 @@
+.connection-logs {
+    padding: 20px;
+    background: #1f2937;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.logs-header {
+    margin-bottom: 25px;
+}
+
+.logs-header h3 {
+    color: #f3f4f6;
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+}
+
+.logs-header p {
+    color: #9ca3af;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.logs-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #374151;
+    color: #9ca3af;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #4b5563;
+    color: #f3f4f6;
+}
+
+.filter-btn.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.logs-stats {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+.log-count {
+    background: #111827;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #374151;
+}
+
+.logs-container {
+    background: #111827;
+    border-radius: 8px;
+    border: 2px solid #374151;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.no-logs {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9ca3af;
+}
+
+.no-logs-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.no-logs-text {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #6b7280;
+}
+
+.no-logs-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.logs-list {
+    padding: 0;
+}
+
+.log-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #374151;
+    transition: background-color 0.2s ease;
+}
+
+.log-entry:hover {
+    background: #1f2937;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-icon {
+    font-size: 1.2rem;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.log-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.log-description {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.log-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.log-timestamp {
+    font-family: 'Courier New', monospace;
+}
+
+.log-ip {
+    font-family: 'Courier New', monospace;
+    color: #3b82f6;
+}
+
+.log-server {
+    color: #8b5cf6;
+}
+
+.log-status {
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.logs-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.export-btn {
+    background: #374151;
+    color: #f3f4f6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.export-btn:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+/* Scrollbar styling */
+.logs-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.logs-container::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.logs-container::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+.logs-container::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .logs-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .logs-stats {
+        text-align: center;
+    }
+    
+    .log-entry {
+        padding: 12px 15px;
+    }
+    
+    .log-details {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

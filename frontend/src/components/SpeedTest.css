@@ -1,0 +1,294 @@
+.speed-test {
+    padding: 20px;
+    background: #1f2937;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.speed-test-header {
+    margin-bottom: 25px;
+}
+
+.speed-test-header h3 {
+    color: #f3f4f6;
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+}
+
+.speed-test-header p {
+    color: #9ca3af;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.speed-test-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.speed-test-main {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.speed-display {
+    flex: 1;
+    text-align: center;
+}
+
+.speed-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.progress-ring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-svg {
+    transform: rotate(-90deg);
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-percentage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 5px;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.speed-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.speed-unit {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-bottom: 5px;
+}
+
+.speed-grade {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ready-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.ready-text {
+    font-size: 1.2rem;
+    color: #f3f4f6;
+    font-weight: 600;
+}
+
+.ready-description {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+.server-info {
+    margin-top: 15px;
+}
+
+.server-name {
+    font-size: 1.1rem;
+    color: #f3f4f6;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ping {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.testing-phases {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.phase {
+    font-size: 0.85rem;
+    color: #6b7280;
+    transition: color 0.3s ease;
+}
+
+.phase.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.speed-details {
+    flex: 1;
+}
+
+.speed-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.metric-card {
+    background: #111827;
+    border: 2px solid #374151;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+}
+
+.metric-card.download:hover {
+    border-color: #10b981;
+}
+
+.metric-card.upload:hover {
+    border-color: #f59e0b;
+}
+
+.metric-card.ping:hover {
+    border-color: #ef4444;
+}
+
+.metric-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.metric-info {
+    flex: 1;
+}
+
+.metric-label {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.metric-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f3f4f6;
+}
+
+.speed-test-actions {
+    text-align: center;
+}
+
+.speed-test-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.speed-test-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.speed-test-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.speed-test-btn.running {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.test-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.test-time, .test-server {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .speed-test-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .speed-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .progress-svg {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .speed-value {
+        font-size: 2rem;
+    }
+    
+    .test-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

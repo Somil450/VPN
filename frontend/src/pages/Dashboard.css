@@ -1,0 +1,142 @@
+.dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-left h1 {
+    color: var(--primary);
+    font-size: 24px;
+    margin: 0;
+}
+
+.status-indicator {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.username {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.dashboard-container {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid var(--light);
+    background: var(--light);
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 15px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tab-btn:hover {
+    background: var(--white);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    background: var(--white);
+}
+
+.server-indicator {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #3b82f6;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.tab-content {
+    padding: 30px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        min-width: 150px;
+    }
+
+    .tab-content {
+        padding: 15px;
+    }
+}
