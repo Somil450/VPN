@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getSocket, requestUserList } from '../utils/socket';
-import CryptoJS from 'crypto-js';
 import './Chat.css';
 
 function Chat() {

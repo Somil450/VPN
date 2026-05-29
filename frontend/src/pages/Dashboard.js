@@ -16,7 +16,6 @@ function Dashboard() {
     const [activeTab, setActiveTab] = useState('server');
     const [connected, setConnected] = useState(false);
     const [selectedServer, setSelectedServer] = useState(null);
-    const [selectedProtocol, setSelectedProtocol] = useState(null);
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     const userId = localStorage.getItem('userId');
@@ -55,7 +54,7 @@ function Dashboard() {
     };
 
     const handleProtocolSelect = (protocol) => {
-        setSelectedProtocol(protocol);
+        // Handle protocol selection here if needed
     };
 
     return (

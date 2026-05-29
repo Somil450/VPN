@@ -10,6 +10,7 @@ function ProtocolSelection({ token, onProtocolSelect }) {
 
     useEffect(() => {
         fetchProtocols();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchProtocols = async () => {

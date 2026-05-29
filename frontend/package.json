@@ -2,23 +2,28 @@
     "name": "vpn-frontend",
     "version": "1.0.0",
     "private": true,
+    "main": "public/electron.js",
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
-        "axios": "^1.6.0",
+        "axios": "^1.16.1",
+        "crypto-js": "^4.2.0",
+        "electron-is-dev": "^3.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.18.0",
         "react-scripts": "5.0.1",
         "socket.io-client": "^4.7.2",
-        "crypto-js": "^4.2.0"
+        "sudo-prompt": "^9.2.1"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "cross-env PORT=3007 react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3007 && electron .\"",
+        "electron:build": "npm run build && electron-builder"
     },
     "eslintConfig": {
         "extends": [
@@ -36,6 +41,85 @@
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1",
+        "cross-env": "^10.1.0",
+        "electron": "^42.2.0",
+        "electron-builder": "^26.8.1",
+        "wait-on": "^9.0.10"
+    },
+    "build": {
+        "appId": "com.realvpn.client",
+        "productName": "Real VPN Client",
+        "win": {
+            "target": "nsis",
+            "icon": "public/logo192.png",
+            "requestedExecutionLevel": "requireAdministrator"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        },
+        "files": [
+            "build/**/*",
+            "public/electron.js",
+            "node_modules/**/*"
+        ],
+        "extraResources": [
+            {
+                "from": "../../connect_loop.ps1",
+                "to": "connect_loop.ps1"
+            },
+            {
+                "from": "../../disconnect.ps1",
+                "to": "disconnect.ps1"
+            },
+            {
+                "from": "../../pass.txt",
+                "to": "pass.txt"
+            },
+            {
+                "from": "../../config-0.ovpn",
+                "to": "config-0.ovpn"
+            },
+            {
+                "from": "../../config-1.ovpn",
+                "to": "config-1.ovpn"
+            },
+            {
+                "from": "../../config-2.ovpn",
+                "to": "config-2.ovpn"
+            },
+            {
+                "from": "../../config-3.ovpn",
+                "to": "config-3.ovpn"
+            },
+            {
+                "from": "../../config-4.ovpn",
+                "to": "config-4.ovpn"
+            },
+            {
+                "from": "../../config-5.ovpn",
+                "to": "config-5.ovpn"
+            },
+            {
+                "from": "../../config-6.ovpn",
+                "to": "config-6.ovpn"
+            },
+            {
+                "from": "../../config-7.ovpn",
+                "to": "config-7.ovpn"
+            },
+            {
+                "from": "../../config-8.ovpn",
+                "to": "config-8.ovpn"
+            },
+            {
+                "from": "../../config-9.ovpn",
+                "to": "config-9.ovpn"
+            }
         ]
     }
 }

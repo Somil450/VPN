@@ -6,7 +6,6 @@ function SpeedTest({ token }) {
     const [isRunning, setIsRunning] = useState(false);
     const [results, setResults] = useState(null);
     const [progress, setProgress] = useState(0);
-    const [serverInfo, setServerInfo] = useState(null);
 
     useEffect(() => {
         const socket = connectSocket(token);
